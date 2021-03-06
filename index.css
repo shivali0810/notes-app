@@ -57,6 +57,22 @@ body{
         transform: rotate(40deg);
         background-color:gold;
     }
+    #d{
+        transform: rotate(40deg);
+        background-color:gold;
+    }
+    #e{
+        transform: rotate(-20deg);
+        background-color:gold;   
+    }
+    #f{
+        transform: rotate(40deg);
+        background-color:gold;
+    }
+    #g{
+        transform: rotate(40deg);
+        background-color:gold;
+    }
     ul li a:hover,ul li a:focus{
         box-shadow: 10px 10px 7px rgba(0,0,0,0.7);
         transform: scale(1.25);
