@@ -70,25 +70,29 @@ body{
         transform: rotate(40deg);
         background-color:gold;
         position:absolute;
-        top:1400px;
+        top:200px;
+        left:500px;
     }
     #e{
         transform: rotate(-20deg);
         background-color:gold;  
         position:absolute;
-        top:1700px; 
+        top:500px; 
+        left:500px;
     }
     #f{
         transform: rotate(40deg);
         background-color:gold;
         position:absolute;
-        top:2000px;
+        top:800px;
+        left:500px;
     }
     #g{
         transform: rotate(40deg);
         background-color:gold;
         position:absolute;
-        top:2300px;
+        top:1100px;
+        left:500px;
     }
     #p{
         position:absolute;
