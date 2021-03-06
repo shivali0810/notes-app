@@ -9,11 +9,35 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Reenie+Beanie&display=swap" rel="stylesheet">
-<script src="index.js"></script>
+<script>
+    $(document).ready(function(){
+       all_notes=$("li a");
+       all_notes.on("keyup",function(){
+           note_title=$(this).find("h2"),text();
+           note_content=$(this).find("p"),text();
+               item_key="list_"+$(this).parent.index();
+               data={
+                   title:note_title,
+                   content:note_content
+               };
+   windows.localStorage.setItem(item_key,JSON.stringify(data));
+       });
+       all_notes.each(function(index){
+           data=JSON.parse(window.localStorage.getItem("list"+index));
+   
+           if(data!==null){
+               note_title=data.title;
+               note_content=data.content;
+               $(this).find("h2").text(note_title);
+               $(this).find("p").text(note_content);
+           }
+       });
+   });   
+   </script>
 </head>
 <body>
 <ul>
-    <li style="background-color:gold;">
+    <li style="background-color:gold;" id="p">
         <a href="#">
             <h2>Title Content #1</h2>
             <p>Text Content #1</p>
@@ -63,31 +87,16 @@
         </li>
         
 </ul>
-<script>
- $(document).ready(function(){
-    all_notes=$("li a");
-    all_notes.on("keyup",function(){
-        note_title=$(this).find("h2"),text();
-        note_content=$(this).find("p"),text();
-            item_key="list_"+$(this).parent.index();
-            data={
-                title:note_title,
-                content:note_content
-            };
-windows.localStorage.setItem(item_key,JSON.stringify(data));
-    });
-    all_notes.each(function(index){
-        data=JSON.parse(window.localStorage.getItem("list"+index));
+<h1>
+<div class="container">
+Notes App
+<div id="des">
+    Write, Edit and Save your notes here!
+</div>
+</div>
+</h1>
 
-        if(data!==null){
-            note_title=data.title;
-            note_content=data.content;
-            $(this).find("h2").text(note_title);
-            $(this).find("p").text(note_content);
-        }
-    });
-});   
-</script>
+    
 
 </body>
 </html>
