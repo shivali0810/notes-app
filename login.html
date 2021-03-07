@@ -8,10 +8,13 @@
     <link rel="stylesheet" href="login.css">
 </head>
 <body>
-<h2>LOGIN FORM</h2>
+<h2> LOGIN FORM
+  <br>
+   Notes App
+</h2>
 <form action="/action_page.php">
 <div class="imagecontainer">
-    <img src="https://picsum.photos/200/100/?blur=2"
+    <img src="https://images.unsplash.com/photo-1507925921958-8a62f3d1a50d?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1055&q=80"
     alt="Avatar" class="avatar">
 </div>
 <div class="container">
@@ -19,13 +22,28 @@
     <input type="text" placeholder="Enter Username" name="uname" required>
     <label><b>Password</b></label>
     <input type="password" placeholder="Enter Password" name="psw" required>
-    <button type="submit">Login</button>
-    <input type="checkbox" checked="checked">Remember
+    <input type="checkbox" onclick="myFunction()">Show Password
+
+
+    <button type="submit" id="login">Login</button>
+    <input type="checkbox" checked="checked">Remember my password
     </div>
     <div class="container" style="background-color: #f1f1f1;">
     <button type="button" class="cancelbtn">Cancel</button>
     <span class="psw">Forgot<a href="#">password?</a></span>
     </div>
 </form>
+
+<script>
+    function myFunction() {
+  var x = document.getElementById("myInput");
+  if (x.type === "password") {
+    x.type = "text";
+  } else {
+    x.type = "password";
+  }
+}
+
+</script>
 </body>
 </html>
